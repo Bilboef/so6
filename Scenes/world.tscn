@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cps4v86yn10ro"]
+[gd_scene load_steps=14 format=3 uid="uid://cps4v86yn10ro"]
 
 [ext_resource type="Texture2D" uid="uid://di32ff7236whp" path="res://Art/Tilesets art/TilesetFloor.png" id="1_m7ot8"]
 [ext_resource type="Texture2D" uid="uid://cv1x15edcia7f" path="res://Art/Tilesets art/TilesetNature.png" id="2_455ra"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b4w32syq0o5oi" path="res://Player/player.tscn" id="4_4t8n0"]
 [ext_resource type="Texture2D" uid="uid://ed33rrlxdwl5" path="res://Art/Tilesets art/TilesetReliefDetail.png" id="4_h7oof"]
 [ext_resource type="Texture2D" uid="uid://b0q1yvi0opqrg" path="res://Art/Tilesets art/TilesetWater.png" id="5_6lbdq"]
-[ext_resource type="PackedScene" uid="uid://de3raiuv3n8gh" path="res://Scenes/scene_trigger.tscn" id="7_jhtmo"]
+[ext_resource type="PackedScene" uid="uid://bcytjhyg3qrp2" path="res://Enemy/enemy.tscn" id="7_7eum6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q55q6"]
 texture = ExtResource("1_m7ot8")
@@ -1521,9 +1521,6 @@ sources/2 = SubResource("TileSetAtlasSource_h4a05")
 sources/3 = SubResource("TileSetAtlasSource_1krpq")
 sources/4 = SubResource("TileSetAtlasSource_f828e")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1cydo"]
-size = Vector2(17, 11)
-
 [node name="World" type="Node"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1547,14 +1544,8 @@ layer_3/tile_data = PackedInt32Array(131103, 3, 7)
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(91, 77)
-collision_mask = 9
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
 
-[node name="SceneTrigger" parent="." instance=ExtResource("7_jhtmo")]
-position = Vector2(503, 34)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
-z_index = 1
-position = Vector2(1, -7)
-shape = SubResource("RectangleShape2D_1cydo")
+[node name="Enemy1" parent="." instance=ExtResource("7_7eum6")]
+position = Vector2(188, 55)
