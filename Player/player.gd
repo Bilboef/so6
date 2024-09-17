@@ -4,23 +4,19 @@ extends CharacterBody2D
 class_name Player
 
 @export var speed: int = 35
-@export var run_speed: int = 70
+@export var run_speed: int = 200
 @export var current_speed: = 35
 @export var health = 100
-@export var health_max = 100
-@export var health_min = 0
 @onready var animations = $AnimationPlayer
-
 
 func handleInput():
 	var moveDirection = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	if Input.is_action_pressed("ui_run"):
-		velocity = moveDirection * run_speed
+		current_speed = run_speed
 	else:
+		current_speed = speed
+		
 		velocity = moveDirection * current_speed
-		
-	
-		
 	
 
 func handleCollision():
@@ -49,7 +45,7 @@ func _physics_process(delta):
 
 
 func update_health():
-	var healthbar = $healthbar
+	var healthbar = $Healthbar
 	healthbar.value = health 
 	
 	if health >= 100 :
