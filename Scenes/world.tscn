@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cps4v86yn10ro"]
+[gd_scene load_steps=14 format=3 uid="uid://cps4v86yn10ro"]
 
 [ext_resource type="Texture2D" uid="uid://di32ff7236whp" path="res://Art/Tilesets art/TilesetFloor.png" id="1_m7ot8"]
 [ext_resource type="Texture2D" uid="uid://cv1x15edcia7f" path="res://Art/Tilesets art/TilesetNature.png" id="2_455ra"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b4w32syq0o5oi" path="res://Player/player.tscn" id="4_4t8n0"]
 [ext_resource type="Texture2D" uid="uid://ed33rrlxdwl5" path="res://Art/Tilesets art/TilesetReliefDetail.png" id="4_h7oof"]
 [ext_resource type="Texture2D" uid="uid://b0q1yvi0opqrg" path="res://Art/Tilesets art/TilesetWater.png" id="5_6lbdq"]
+[ext_resource type="PackedScene" uid="uid://bcytjhyg3qrp2" path="res://Enemy/enemy.tscn" id="7_7eum6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q55q6"]
 texture = ExtResource("1_m7ot8")
@@ -1545,3 +1546,6 @@ texture_filter = 1
 position = Vector2(91, 77)
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
+
+[node name="Enemy1" parent="." instance=ExtResource("7_7eum6")]
+position = Vector2(273, 154)
