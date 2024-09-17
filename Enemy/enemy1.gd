@@ -12,8 +12,8 @@ var player = null
 
 func _physics_process(delta):
 	
-	if player_chase and player != null and player.has_method("get_position"):
-		position += (player.position - position).normalized() * speed * delta
+	if player_chase:
+		position += (player.position.x - position.x)
 
 	if player.position.x > position.x:
 		$AnimatedSprite2D.play("Right")
@@ -29,6 +29,6 @@ func _on_detection_area_body_entered(body):
 		player_chase = true
 
 func _on_detection_area_body_exited(body):
-	if body == player:
+	if body == "Player":
 		player = body
 		player_chase = false
