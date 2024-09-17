@@ -7,28 +7,25 @@ var startPosition
 var endPosition
 
 var player_chase = false
-var player = null
+var player
 
 
 func _physics_process(delta):
 	
 	if player_chase:
-		position += (player.position.x - position.x)
-
-	if player.position.x > position.x:
+		position += (player.position - position)/speed
+		$AnimatedSprite2D.play("Idle")
+		
+	if(player.position.x - position.x) < 0:
 		$AnimatedSprite2D.play("Right")
 	else:
 		$AnimatedSprite2D.play("Left")
 
 
-
-
 func _on_detection_area_body_entered(body):
-	if body.name == "Player":
-		player = body
-		player_chase = true
+	player = body
+	player_chase = true
 
 func _on_detection_area_body_exited(body):
-	if body == "Player":
-		player = body
-		player_chase = false
+	player = body
+	player_chase = false
