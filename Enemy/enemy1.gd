@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-var speed = 40
+var speed = 25
 var player_chase = false
 var player = null
-
+@onready var animations = $AnimationPlayer
 
 func _physics_process(delta):
 
@@ -11,17 +11,17 @@ func _physics_process(delta):
 		var direction = (player.position - position).normalized()
 		position += direction * speed * delta
 
+		func updateAnimation():
+	if velocity.length() == 0:
+		animations.stop()
+	else:
+		var direction = "Forward"
+		if velocity.x < 0: direction = "Left"
+		elif velocity.x > 0: direction = "Right"
+		elif velocity.y < 0: direction = "Back"
+		animations.play(direction)
 		
-		$AnimatedSprite2D.play("Idle")
 		
-		if player.position.x > position.x:
-			$AnimatedSprite2D.play("Right")
-		elif player.position.x > position.x:
-			$AnimatedSprite2D.play("Left")
-		elif player.position.x > position.x:
-			$AnimatedSprite2D.play("Back")
-		else:
-			$AnimatedSprite2D.play("Forward")
 
 func _on_detection_area_body_entered(body):
 	if body.name == "Player":
