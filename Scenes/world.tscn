@@ -1559,6 +1559,7 @@ position = Vector2(188, 55)
 
 [node name="SceneTrigger" parent="." instance=ExtResource("8_6dd6j")]
 position = Vector2(504, 31)
+connected_scene = "inside_cave"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
 z_index = 1
