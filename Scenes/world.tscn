@@ -1549,6 +1549,7 @@ layer_3/tile_data = PackedInt32Array(131103, 3, 7)
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(91, 77)
+collision_layer = 11
 script = ExtResource("7_k8mla")
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
