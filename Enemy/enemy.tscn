@@ -74,7 +74,7 @@ region = Rect2(48, 48, 16, 16)
 [sub_resource type="SpriteFrames" id="SpriteFrames_m2xty"]
 animations = [{
 "frames": [{
-"duration": 1.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_tb2mc")
 }, {
 "duration": 1.0,
@@ -306,12 +306,15 @@ _data = {
 }
 
 [node name="Enemy1" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_61thw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_m2xty")
 animation = &"Back"
+frame_progress = 0.873576
 offset = Vector2(0, -8)
 
 [node name="detectionArea" type="Area2D" parent="."]
