@@ -16,12 +16,13 @@ func _physics_process(delta):
 			$AnimatedSprite2D.play("Right")
 		elif player.position.x < position.x:
 			$AnimatedSprite2D.play("Left")
-		elif player.velocity.y < position.y:
+		if player.position.y < self.position.y and player.position.x > position.x:
 			$AnimatedSprite2D.play("Back")
-		elif player.velocity.y > position.y:
+		elif player.position.y > self.position.y and player.position.x < position.x:
 			$AnimatedSprite2D.play("Forward")
-		else:
-			$AnimatedSprite2D.play("Idle")
+		
+
+
 
 
 func _on_detection_area_body_entered(body):

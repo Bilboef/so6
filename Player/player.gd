@@ -23,6 +23,10 @@ func handleInput():
 		
 	
 
+func handleCollision():
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var 	collider = collision.get_collider()
 
 func updateAnimation():
 	if velocity.length() == 0:
