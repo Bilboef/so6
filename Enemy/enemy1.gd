@@ -28,8 +28,8 @@ func _on_detection_area_body_entered(body):
 		player_chase = true
 		print("Player detected! Starting chase.")
 
-
-func _on_detection_area_body_exited(body: Node2D) -> void:
+func _on_detection_area_body_exited(body):
+	# Stopper jagten, når spilleren forlader detektionsområdet
 	if body == player:
 		player_chase = false
 		player = null
