@@ -6,6 +6,7 @@ class_name Player
 @export var speed: int = 35
 @export var run_speed: int = 200
 @export var current_speed: = 35
+@export var health = 100
 @onready var animations = $AnimationPlayer
 
 func handleInput():
@@ -17,6 +18,7 @@ func handleInput():
 		
 		velocity = moveDirection * current_speed
 	
+
 
 func updateAnimation():
 	if velocity.length() == 0:
@@ -32,3 +34,18 @@ func _physics_process(delta):
 	handleInput()
 	move_and_slide()
 	updateAnimation()
+	
+	
+	
+
+
+
+func update_health():
+	var healthbar = $Healthbar
+	healthbar.value = health 
+	
+	if health >= 100 :
+		healthbar.visible = false
+	else:
+		healthbar.visible = true
+	

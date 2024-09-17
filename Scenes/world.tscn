@@ -1551,6 +1551,7 @@ texture_filter = 1
 position = Vector2(91, 77)
 collision_layer = 11
 script = ExtResource("7_k8mla")
+health = 100
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
 
