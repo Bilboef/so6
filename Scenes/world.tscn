@@ -1547,5 +1547,8 @@ position = Vector2(91, 77)
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
 
-[node name="Enemy1" parent="." instance=ExtResource("7_7eum6")]
+[node name="Enemy1" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("7_7eum6")]
 position = Vector2(261, 89)
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemy1"]

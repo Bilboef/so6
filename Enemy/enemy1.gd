@@ -1,6 +1,11 @@
 extends CharacterBody2D
 
 var speed = 40
+@export var endPoint: Marker2D
+
+var startPosition
+var endPosition
+
 var player_chase = false
 var player = null
 
