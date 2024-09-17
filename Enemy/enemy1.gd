@@ -6,6 +6,7 @@ var player = null
 
 
 func _physics_process(delta):
+	print_debug(player.position)
 	# Tjekker først om player eksisterer, før vi bruger dens position
 	if player_chase and player != null and player.has_method("get_position"):
 		# Fjenden bevæger sig mod spilleren
@@ -16,8 +17,8 @@ func _physics_process(delta):
 			$AnimatedSprite2D.play("Right")
 		else:
 			$AnimatedSprite2D.play("Left")
-	else:
-		print("Player chase is off or player is null.")
+	#else:
+		#print("Player chase is off or player is null.")
 
 func _on_detection_area_body_entered(body):
 	# Tjekker om body er spilleren, før fjenden begynder at jagte
