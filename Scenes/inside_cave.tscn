@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b5x4hgg5tm2k1"]
 
 [ext_resource type="Texture2D" uid="uid://chgq8qdfuineb" path="res://Art/Tilesets art/TilesetHole.png" id="1_65hwd"]
-[ext_resource type="Script" path="res://Scenes/base_scene.gd" id="1_nax8j"]
+[ext_resource type="Script" path="res://Scenes/world.gd" id="1_vm07n"]
 [ext_resource type="Texture2D" uid="uid://ed33rrlxdwl5" path="res://Art/Tilesets art/TilesetReliefDetail.png" id="2_q0lx8"]
 [ext_resource type="Script" path="res://follow_cam.gd" id="4_6705i"]
 
@@ -124,7 +124,7 @@ sources/0 = SubResource("TileSetAtlasSource_5ijj0")
 sources/1 = SubResource("TileSetAtlasSource_om7pp")
 
 [node name="InsideCave" type="Node2D"]
-script = ExtResource("1_nax8j")
+script = ExtResource("1_vm07n")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
