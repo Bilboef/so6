@@ -8,9 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://ed33rrlxdwl5" path="res://Art/Tilesets art/TilesetReliefDetail.png" id="4_h7oof"]
 [ext_resource type="Texture2D" uid="uid://b0q1yvi0opqrg" path="res://Art/Tilesets art/TilesetWater.png" id="5_6lbdq"]
 [ext_resource type="PackedScene" uid="uid://bcytjhyg3qrp2" path="res://Enemy/enemy.tscn" id="7_7eum6"]
+<<<<<<< Updated upstream
+[ext_resource type="PackedScene" path="res://Scenes/scene_trigger.tscn" id="8_6dd6j"]
+=======
 [ext_resource type="Texture2D" uid="uid://d0ppusgv8uyvv" path="res://Art/Tilesets art/TilesetHouse.png" id="7_exrrj"]
 [ext_resource type="PackedScene" uid="uid://de3raiuv3n8gh" path="res://Scenes/scene_trigger.tscn" id="8_6dd6j"]
 [ext_resource type="Script" path="res://follow_cam.gd" id="10_yinx3"]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q55q6"]
 texture = ExtResource("1_m7ot8")
@@ -1578,10 +1582,11 @@ texture_filter = 1
 position = Vector2(103, 90)
 collision_layer = 11
 
-[node name="follow_cam" type="Camera2D" parent="." node_paths=PackedStringArray("tilemap")]
+[node name="follow_cam" type="Camera2D" parent="." node_paths=PackedStringArray("tilemap", "follow_node")]
 position = Vector2(81, 71)
 script = ExtResource("10_yinx3")
 tilemap = NodePath("../TileMap")
+follow_node = NodePath("..")
 
 [node name="EntranceMarkers" type="Node2D" parent="."]
 position = Vector2(79, 85)

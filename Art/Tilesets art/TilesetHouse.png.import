@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5v1nsougmwwt"
-path="res://.godot/imported/Walk.png-c6952d4fac69680ce2bbe1c159828402.ctex"
+uid="uid://d0ppusgv8uyvv"
+path="res://.godot/imported/TilesetHouse.png-79cb7ecef3202c5e2d4de4443e514a9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Knight/SeparateAnim/Walk.png"
-dest_files=["res://.godot/imported/Walk.png-c6952d4fac69680ce2bbe1c159828402.ctex"]
+source_file="res://Art/Tilesets art/TilesetHouse.png"
+dest_files=["res://.godot/imported/TilesetHouse.png-79cb7ecef3202c5e2d4de4443e514a9c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr761f0frvf6n"
-path="res://.godot/imported/Idle.png-4946d9c451be5cd3d5ee74c24f7044ca.ctex"
+uid="uid://bj5ctwigk7y0l"
+path="res://.godot/imported/TilesetElement.png-70263941cb09f1b8f3840c92facadda3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Knight/SeparateAnim/Idle.png"
-dest_files=["res://.godot/imported/Idle.png-4946d9c451be5cd3d5ee74c24f7044ca.ctex"]
+source_file="res://Art/Tilesets art/TilesetElement.png"
+dest_files=["res://.godot/imported/TilesetElement.png-70263941cb09f1b8f3840c92facadda3.ctex"]
 
 [params]
 
