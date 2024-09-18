@@ -16,7 +16,7 @@ func _physics_process(delta):
 			$AnimatedSprite2D.play("Right")
 		elif player.position.x < position.x:
 			$AnimatedSprite2D.play("Left")
-		if player.position.y < self.position.y and player.position.x > position.x:
+		elif player.position.y < self.position.y and player.position.x > position.x:
 			$AnimatedSprite2D.play("Back")
 		elif player.position.y > self.position.y and player.position.x < position.x:
 			$AnimatedSprite2D.play("Forward")

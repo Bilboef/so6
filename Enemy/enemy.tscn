@@ -311,8 +311,7 @@ script = ExtResource("1_61thw")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_m2xty")
-animation = &"Back"
-frame_progress = 0.873576
+animation = &"Idle"
 offset = Vector2(0, -8)
 
 [node name="detectionArea" type="Area2D" parent="."]
