@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds74ikbj37qb0"
-path="res://.godot/imported/Jump.png-5b939e4e7d5a1ff2726c2333143009c4.ctex"
+uid="uid://biujr3a3aiix7"
+path="res://.godot/imported/TilesetWallSimple.png-2916c4518b556549c4544e34c0fcc7d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Knight/SeparateAnim/Jump.png"
-dest_files=["res://.godot/imported/Jump.png-5b939e4e7d5a1ff2726c2333143009c4.ctex"]
+source_file="res://Art/Tilesets art/TilesetWallSimple.png"
+dest_files=["res://.godot/imported/TilesetWallSimple.png-2916c4518b556549c4544e34c0fcc7d4.ctex"]
 
 [params]
 

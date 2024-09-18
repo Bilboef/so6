@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyji2u4wan5nt"
-path="res://.godot/imported/Dead.png-3efbe6b481e19b99fef8aa12b155d003.ctex"
+uid="uid://bnnhfbkntpb23"
+path="res://.godot/imported/Faceset.png-c604cc3e900f9b8c5f28a04668040b13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Knight/SeparateAnim/Dead.png"
-dest_files=["res://.godot/imported/Dead.png-3efbe6b481e19b99fef8aa12b155d003.ctex"]
+source_file="res://Knight/Faceset.png"
+dest_files=["res://.godot/imported/Faceset.png-c604cc3e900f9b8c5f28a04668040b13.ctex"]
 
 [params]
 

@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5x4hgg5tm2k1"]
+[gd_scene load_steps=8 format=3 uid="uid://b5x4hgg5tm2k1"]
 
 [ext_resource type="Texture2D" uid="uid://chgq8qdfuineb" path="res://Art/Tilesets art/TilesetHole.png" id="1_65hwd"]
+[ext_resource type="Script" path="res://Scenes/base_scene.gd" id="1_nax8j"]
 [ext_resource type="Texture2D" uid="uid://ed33rrlxdwl5" path="res://Art/Tilesets art/TilesetReliefDetail.png" id="2_q0lx8"]
+[ext_resource type="Script" path="res://follow_cam.gd" id="4_6705i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ijj0"]
 texture = ExtResource("1_65hwd")
@@ -122,6 +124,7 @@ sources/0 = SubResource("TileSetAtlasSource_5ijj0")
 sources/1 = SubResource("TileSetAtlasSource_om7pp")
 
 [node name="InsideCave" type="Node2D"]
+script = ExtResource("1_nax8j")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -132,4 +135,14 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 2, 65536, 0, 3, 65536, 0, 4, 65536
 layer_1/name = "Stone"
 layer_1/y_sort_enabled = true
 layer_1/z_index = 1
-layer_1/tile_data = PackedInt32Array(65537, 65537, 0, 65536, 262145, 0, 65538, 262145, 0, 262148, 262145, 0, 65545, 262145, 0, 262157, 262145, 0, 65551, 262145, 0, 131081, 262145, 0, 262153, 262145, 0, 131091, 262145, 0, 65557, 262145, 0, 262168, 262145, 0, 65559, 65537, 0, 131093, 262145, 0, 196629, 262145, 0, 65560, 262145, 0)
+layer_1/tile_data = PackedInt32Array(65536, 262145, 0, 65538, 262145, 0, 262148, 262145, 0, 65545, 262145, 0, 262157, 262145, 0, 65551, 262145, 0, 131081, 262145, 0, 262153, 262145, 0, 131091, 262145, 0, 65557, 262145, 0, 262168, 262145, 0, 65559, 65537, 0, 131093, 262145, 0, 196629, 262145, 0, 65560, 262145, 0, 65537, 65537, 2)
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+
+[node name="any" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(24, 45)
+
+[node name="follow_cam" type="Camera2D" parent="." node_paths=PackedStringArray("tilemap")]
+position = Vector2(119, 44)
+script = ExtResource("4_6705i")
+tilemap = NodePath("../TileMap")
