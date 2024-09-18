@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ed33rrlxdwl5" path="res://Art/Tilesets art/TilesetReliefDetail.png" id="4_h7oof"]
 [ext_resource type="Texture2D" uid="uid://b0q1yvi0opqrg" path="res://Art/Tilesets art/TilesetWater.png" id="5_6lbdq"]
 [ext_resource type="PackedScene" uid="uid://bcytjhyg3qrp2" path="res://Enemy/enemy.tscn" id="7_7eum6"]
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 [ext_resource type="PackedScene" path="res://Scenes/scene_trigger.tscn" id="8_6dd6j"]
 =======
@@ -15,6 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://de3raiuv3n8gh" path="res://Scenes/scene_trigger.tscn" id="8_6dd6j"]
 [ext_resource type="Script" path="res://follow_cam.gd" id="10_yinx3"]
 >>>>>>> Stashed changes
+=======
+[ext_resource type="PackedScene" path="res://Scenes/scene_trigger.tscn" id="8_6dd6j"]
+>>>>>>> parent of 1b3d6ae (1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q55q6"]
 texture = ExtResource("1_m7ot8")
