@@ -1,13 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://cps4v86yn10ro"]
+[gd_scene load_steps=21 format=3 uid="uid://cps4v86yn10ro"]
 
 [ext_resource type="Texture2D" uid="uid://di32ff7236whp" path="res://Art/Tilesets art/TilesetFloor.png" id="1_m7ot8"]
+[ext_resource type="Script" path="res://Scenes/world.gd" id="1_qoi4s"]
 [ext_resource type="Texture2D" uid="uid://cv1x15edcia7f" path="res://Art/Tilesets art/TilesetNature.png" id="2_455ra"]
 [ext_resource type="Texture2D" uid="uid://co8c8aafim2p" path="res://Art/Tilesets art/TilesetField.png" id="3_r7gwj"]
 [ext_resource type="PackedScene" uid="uid://b4w32syq0o5oi" path="res://Player/player.tscn" id="4_4t8n0"]
 [ext_resource type="Texture2D" uid="uid://ed33rrlxdwl5" path="res://Art/Tilesets art/TilesetReliefDetail.png" id="4_h7oof"]
 [ext_resource type="Texture2D" uid="uid://b0q1yvi0opqrg" path="res://Art/Tilesets art/TilesetWater.png" id="5_6lbdq"]
 [ext_resource type="PackedScene" uid="uid://bcytjhyg3qrp2" path="res://Enemy/enemy.tscn" id="7_7eum6"]
-[ext_resource type="PackedScene" path="res://Scenes/scene_trigger.tscn" id="8_6dd6j"]
+[ext_resource type="Texture2D" uid="uid://d0ppusgv8uyvv" path="res://Art/Tilesets art/TilesetHouse.png" id="7_exrrj"]
+[ext_resource type="PackedScene" uid="uid://de3raiuv3n8gh" path="res://Scenes/scene_trigger.tscn" id="8_6dd6j"]
+[ext_resource type="Script" path="res://follow_cam.gd" id="10_yinx3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q55q6"]
 texture = ExtResource("1_m7ot8")
@@ -1511,6 +1514,13 @@ texture = ExtResource("5_6lbdq")
 7:16/0 = 0
 8:16/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5yjib"]
+texture = ExtResource("7_exrrj")
+4:0/size_in_atlas = Vector2i(4, 3)
+4:0/0 = 0
+4:0/0/y_sort_origin = 22
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.4375, -8, 29.0625, -7.9375, 29.3125, 22.8125, 0.5625, 23.1875, 0.1875, 9.3125, -16.6875, 8.9375, -17.1875, 23.8125, -30.4375, 23.3125, -30.8125, -7.8125)
+
 [sub_resource type="TileSet" id="TileSet_c65e7"]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
@@ -1521,11 +1531,17 @@ sources/1 = SubResource("TileSetAtlasSource_0v4k8")
 sources/2 = SubResource("TileSetAtlasSource_h4a05")
 sources/3 = SubResource("TileSetAtlasSource_1krpq")
 sources/4 = SubResource("TileSetAtlasSource_f828e")
+sources/5 = SubResource("TileSetAtlasSource_5yjib")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x3f5x"]
 size = Vector2(15, 8)
 
-[node name="World" type="Node"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ee8q1"]
+size = Vector2(14, 10)
+
+[node name="World" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_qoi4s")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -1542,15 +1558,7 @@ layer_2/tile_data = PackedInt32Array(393228, 1, 0, 65544, 1, 0, 458753, 1, 0, 12
 layer_3/name = "Buildings"
 layer_3/y_sort_enabled = true
 layer_3/z_index = 1
-layer_3/tile_data = PackedInt32Array(131103, 3, 7)
-
-[node name="Player" parent="TileMap" instance=ExtResource("4_4t8n0")]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(91, 77)
-collision_layer = 11
-
-[node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
+layer_3/tile_data = PackedInt32Array(131103, 3, 7, 131077, 262149, 0)
 
 [node name="Enemy1" parent="." instance=ExtResource("7_7eum6")]
 position = Vector2(188, 55)
@@ -1563,3 +1571,32 @@ connected_scene = "inside_cave"
 z_index = 1
 position = Vector2(-0.5, -3)
 shape = SubResource("RectangleShape2D_x3f5x")
+
+[node name="Player" parent="." instance=ExtResource("4_4t8n0")]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(103, 90)
+collision_layer = 11
+
+[node name="follow_cam" type="Camera2D" parent="." node_paths=PackedStringArray("tilemap")]
+position = Vector2(81, 71)
+script = ExtResource("10_yinx3")
+tilemap = NodePath("../TileMap")
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+position = Vector2(79, 85)
+
+[node name="insideCave" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(424, -34)
+
+[node name="Start" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(1, -12)
+
+[node name="SceneTrigger2" parent="." instance=ExtResource("8_6dd6j")]
+position = Vector2(78, 56)
+connected_scene = "inside_house_1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger2"]
+z_index = 2
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_ee8q1")
